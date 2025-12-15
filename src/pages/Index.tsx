@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import BestsellersSection from "@/components/BestsellersSection";
+import RecentlyViewedSection from "@/components/RecentlyViewedSection";
+import GiftNotesSection from "@/components/GiftNotesSection";
+import FeaturedCollectionsSection from "@/components/FeaturedCollectionsSection";
+import ExploreCollectionSection from "@/components/ExploreCollectionSection";
+import GiftsCelebrateSection from "@/components/GiftsCelebrateSection";
+import CraftsmanshipSection from "@/components/CraftsmanshipSection";
+import NotJustTrendSection from "@/components/NotJustTrendSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import InstagramSection from "@/components/InstagramSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <AnnouncementBar />
+      <Header />
+      <main>
+        <HeroSection />
+        <BestsellersSection />
+        <RecentlyViewedSection />
+        <GiftNotesSection />
+        <FeaturedCollectionsSection />
+        <ExploreCollectionSection />
+        <GiftsCelebrateSection />
+        <CraftsmanshipSection />
+        <NotJustTrendSection />
+        <TestimonialsSection />
+        <InstagramSection />
+      </main>
+      <Footer />
     </div>
   );
 };
