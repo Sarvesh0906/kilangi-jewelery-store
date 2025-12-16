@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram, Facebook, Youtube, ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const footerLinks = {
   "OUR COLLECTION": ["Rings", "Necklaces", "Earrings", "Bracelets", "Bangles", "Pendants"],
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <img src={logo} alt="KILANGI" className="h-12 mb-6 brightness-0 invert" />
+            <img src={logo} alt="KILANGI" className="h-auto lg:w-48 w-28 mb-6 invert"  />
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6 max-w-sm">
               KILANGI Jewellery is a premium brand specializing in exquisite silver 
               and lab-grown gold pieces that combine timeless elegance with 
@@ -75,10 +75,10 @@ const Footer = () => {
 
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="font-medium text-primary-foreground mb-4 text-sm tracking-wide">{title}</h4>
-              <ul className="space-y-2.5">
-                {links.map((link) => (
+            <div key={title} className="flex flex-col gap-2">
+              <h4 className="font-medium text-primary-foreground lg:mb-4 mb-2 text-sm tracking-wide">{title}</h4>
+              <ul className="lg:space-y-2.5 space-y-1">
+                  {links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
@@ -97,14 +97,9 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
         <div className="section-padding py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-primary-foreground/60">
-              © 2024 KILANGI Jewellery. All rights reserved.
+            <p className="text-sm text-center text-primary-foreground/60">
+              &copy; {new Date().getFullYear()} KILANGI Jewellery | All rights reserved
             </p>
-            <div className="flex gap-6">
-              <span className="text-sm text-primary-foreground/60">🇮🇳 INR ₹</span>
-            </div>
-          </div>
         </div>
       </div>
     </footer>

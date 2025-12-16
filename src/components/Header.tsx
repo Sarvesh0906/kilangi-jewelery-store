@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "All Jewellery", href: "#" },
@@ -55,7 +55,7 @@ const Header = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <img src={logo} alt="KILANGI" className="h-10 lg:h-14 w-auto object-contain" />
+            <img src={logo} alt="KILANGI" className="h-10 lg:h-16 w-auto object-contain" />
           </motion.a>
 
           {/* Right Icons */}
