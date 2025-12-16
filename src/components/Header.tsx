@@ -1,102 +1,121 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Heart, ShoppingBag, User, Menu, X, ChevronDown } from "lucide-react";
+import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const navLinks = [
-  { name: "Jewellery", href: "#", hasDropdown: true },
+  { name: "All Jewellery", href: "#" },
   { name: "Gold", href: "#" },
-  { name: "Gifts", href: "#" },
+  { name: "Silver", href: "#" },
   { name: "Gifting", href: "#" },
   { name: "About Us", href: "#" },
+  { name: "Contact", href: "#" },
+];
+
+const categoryPills = [
+  { name: "Bestsellers", image: "/placeholder.svg" },
+  { name: "Earrings", image: "/placeholder.svg" },
+  { name: "Rings", image: "/placeholder.svg" },
+  { name: "Earrings", image: "/placeholder.svg" },
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="section-padding">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+    <header className="sticky top-0 z-50 bg-kilangi-cream">
+      {/* Main Header Row */}
+      <div className="section-padding border-b border-border/50">
+        <div className="flex items-center justify-between h-14 lg:h-16">
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 -ml-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" />
           </button>
 
           {/* Search - Desktop */}
-          <div className="hidden lg:flex items-center gap-2 flex-1">
+          <div className="hidden lg:flex items-center flex-1">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search Earrings..."
-                className="pl-10 pr-4 py-2 bg-secondary rounded-sm text-sm w-48 focus:w-64 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-primary"
+                placeholder="Search for Earrings.."
+                className="pl-4 pr-12 py-2.5 bg-background border border-border rounded-full text-sm w-64 focus:outline-none focus:ring-1 focus:ring-kilangi-green/30"
               />
+              <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground" />
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.slice(0, 2).map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-foreground hover:text-kilangi-green transition-colors link-underline flex items-center gap-1"
-                onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {link.name}
-                {link.hasDropdown && <ChevronDown className="h-3 w-3" />}
-              </a>
-            ))}
-          </nav>
-
-          {/* Logo */}
+          {/* Logo - Centered */}
           <motion.a
             href="/"
-            className="flex-shrink-0 mx-4 lg:mx-8"
+            className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <img src={logo} alt="KILANGI" className="h-10 lg:h-14 w-auto object-contain" />
           </motion.a>
 
-          {/* Desktop Navigation - Right */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.slice(2).map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-foreground hover:text-kilangi-green transition-colors link-underline"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
           {/* Right Icons */}
-          <div className="flex items-center gap-3 lg:gap-4 flex-1 justify-end">
-            <button className="lg:hidden p-2 text-foreground" aria-label="Search">
-              <Search className="h-5 w-5" />
+          <div className="flex items-center gap-2 lg:gap-3 flex-1 justify-end">
+            <button className="p-2 text-foreground hover:text-kilangi-green transition-colors" aria-label="Wishlist">
+              <Heart className="h-5 w-5" />
             </button>
             <button className="hidden lg:block p-2 text-foreground hover:text-kilangi-green transition-colors" aria-label="Account">
               <User className="h-5 w-5" />
             </button>
-            <button className="p-2 text-foreground hover:text-kilangi-green transition-colors" aria-label="Wishlist">
-              <Heart className="h-5 w-5" />
-            </button>
-            <button className="p-2 text-foreground hover:text-kilangi-green transition-colors relative" aria-label="Cart">
+            <button className="p-2 text-foreground hover:text-kilangi-green transition-colors" aria-label="Cart">
               <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-0.5 -right-0.5 h-4 w-4 bg-primary text-primary-foreground text-[10px] rounded-full flex items-center justify-center font-medium">
-                0
-              </span>
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Desktop Navigation Row */}
+      <nav className="hidden lg:block bg-kilangi-cream border-b border-border/50">
+        <div className="section-padding">
+          <div className="flex items-center justify-center gap-10 py-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-foreground hover:text-kilangi-green transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Search Row */}
+      <div className="lg:hidden bg-kilangi-cream border-b border-border/50 px-4 py-3">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search for Earrings.."
+            className="w-full pl-4 pr-12 py-2.5 bg-background border border-border rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-kilangi-green/30"
+          />
+          <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground" />
+        </div>
+      </div>
+
+      {/* Mobile Category Pills */}
+      <div className="lg:hidden bg-kilangi-cream border-b border-border/50 px-4 py-3 overflow-x-auto">
+        <div className="flex items-center gap-3">
+          {categoryPills.map((pill, index) => (
+            <button
+              key={index}
+              className="flex items-center gap-2 px-4 py-2 bg-background border border-border rounded-full text-sm font-medium whitespace-nowrap hover:border-kilangi-green transition-colors"
+            >
+              <div className="w-6 h-6 rounded-full bg-kilangi-green/20 overflow-hidden">
+                <img src={pill.image} alt="" className="w-full h-full object-cover" />
+              </div>
+              {pill.name}
+            </button>
+          ))}
         </div>
       </div>
 
