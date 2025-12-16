@@ -1,41 +1,48 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
     id: 1,
     name: "Priya Sharma",
     rating: 5,
-    text: "I purchased the Golden Radiance Necklace for my sister's birthday and she absolutely loved it! The craftsmanship is stunning, and it arrived in beautiful packaging.",
-    product: "Golden Radiance Necklace",
+    title: '"So pretty"',
+    text: "I purchased the Golden Radiance Necklace for my sister's birthday and she absolutely loved it! The craftsmanship is stunning, and the packaging...",
+    product: "For Dad Wedding",
+    action: "Read Mobs",
   },
   {
     id: 2,
     name: "Ananya Patel",
     rating: 5,
+    title: '"So pretty"',
     text: "So pretty! The Golden Radiance Necklace for my sister's birthday and she loved it! The craftsmanship is stunning and beautiful packaging.",
-    product: "Pearl Elegance Earrings",
+    product: "For Dad Wedding",
+    action: "Read Mobs",
   },
   {
     id: 3,
     name: "Meera Krishnan",
     rating: 5,
+    title: '"So pretty"',
     text: "Excellent quality jewellery! I've been wearing my bracelet daily for months and it still looks brand new. The anti-fade polish really works!",
-    product: "Twisted Petal Bracelet",
+    product: "For Dad Wedding",
+    action: "Read Mobs",
   },
   {
     id: 4,
     name: "Riya Gupta",
     rating: 5,
+    title: '"So pretty"',
     text: "So pretty! The design is modern yet timeless. I receive compliments every time I wear it. Will definitely be ordering more pieces!",
-    product: "Solitaire Ring",
+    product: "For Dad Wedding",
+    action: "Read Mobs",
   },
 ];
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -78,13 +85,18 @@ const TestimonialsSection = () => {
                   <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                 ))}
               </div>
-              <Quote className="h-5 w-5 text-muted-foreground/30 mb-3" />
+              <p className="font-semibold text-foreground mb-2">{testimonial.title}</p>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                "{testimonial.text}"
+                {testimonial.text}
               </p>
-              <div className="border-t border-border pt-4">
-                <p className="font-medium text-foreground text-sm">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">Verified Purchase</p>
+              <div className="border-t border-border pt-4 flex items-center justify-between">
+                <div>
+                  <p className="text-xs text-muted-foreground">{testimonial.product}</p>
+                </div>
+                <a href="#" className="text-xs text-kilangi-green font-medium flex items-center gap-1 hover:underline">
+                  {testimonial.action}
+                  <ArrowRight className="h-3 w-3" />
+                </a>
               </div>
             </motion.article>
           ))}
@@ -106,13 +118,18 @@ const TestimonialsSection = () => {
                     <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <Quote className="h-5 w-5 text-muted-foreground/30 mb-3" />
+                <p className="font-semibold text-foreground mb-2">{testimonials[currentIndex].title}</p>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                  "{testimonials[currentIndex].text}"
+                  {testimonials[currentIndex].text}
                 </p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-medium text-foreground text-sm">{testimonials[currentIndex].name}</p>
-                  <p className="text-xs text-muted-foreground">Verified Purchase</p>
+                <div className="border-t border-border pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-muted-foreground">{testimonials[currentIndex].product}</p>
+                  </div>
+                  <a href="#" className="text-xs text-kilangi-green font-medium flex items-center gap-1 hover:underline">
+                    {testimonials[currentIndex].action}
+                    <ArrowRight className="h-3 w-3" />
+                  </a>
                 </div>
               </motion.article>
             </AnimatePresence>
@@ -135,6 +152,19 @@ const TestimonialsSection = () => {
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
+        </div>
+
+        {/* Read More Reviews Button */}
+        <div className="text-center mt-10">
+          <motion.a
+            href="#"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 btn-outline group"
+          >
+            Read More Reviews
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </motion.a>
         </div>
       </div>
     </section>

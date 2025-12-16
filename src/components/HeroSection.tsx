@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Feather, Clock, Gem } from "lucide-react";
-import heroImage from "@/assets/hero-model.jpg";
+import heroImage from "@/assets/hero-model-new.jpg";
 
 const usps = [
-  { icon: Sparkles, label: "Anti-Fade Polish" },
+  { icon: Sparkles, label: "Anti - Fade Polish" },
   { icon: Clock, label: "Timeless Design" },
   { icon: Feather, label: "Lightweight Comfort" },
   { icon: Gem, label: "Modern Minimal" },
@@ -23,7 +23,8 @@ const HeroSection = () => {
           >
             <h1 className="heading-xl text-foreground mb-4">
               Because You Deserve to{" "}
-              <span className="text-elegant text-kilangi-green">Feel Timeless.</span>
+              <span className="text-elegant text-kilangi-green">Feel</span>{" "}
+              <span className="text-elegant text-kilangi-green">Timeless.</span>
             </h1>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Discover the perfect gift for your loved ones and elevate your everyday style 
@@ -50,7 +51,7 @@ const HeroSection = () => {
         >
           <img
             src={heroImage}
-            alt="Elegant woman wearing KILANGI gold necklace"
+            alt="Elegant gold necklace on green silk fabric"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent lg:hidden" />
