@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Instagram, Facebook, Youtube, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const footerLinks = {
-  "Our Collection": ["Rings", "Necklaces", "Earrings", "Bracelets", "Bangles", "Pendants"],
-  "Quick Links": ["About Us", "Contact Us", "FAQs", "Shipping Info", "Size Guide", "Care Guide"],
-  "Policies": ["Privacy Policy", "Return Policy", "Terms & Conditions", "Warranty Policy"],
+  "OUR COLLECTION": ["Rings", "Necklaces", "Earrings", "Bracelets", "Bangles", "Pendants"],
+  "QUICK LINKS": ["About Us", "Contact Us", "FAQs", "Shipping Info", "Size Guide", "Care Guide"],
+  "POLICIES": ["Privacy Policy", "Return Policy", "Terms & Conditions", "Warranty Policy"],
 };
 
 const Footer = () => {
@@ -20,51 +20,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-kilangi-charcoal text-primary-foreground">
-      {/* Newsletter */}
-      <div className="border-b border-primary-foreground/10">
-        <div className="section-padding py-12 lg:py-16">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="heading-md text-primary-foreground mb-2">
-                Stay In Touch With <span className="text-elegant text-kilangi-gold">KILANGI</span>
-              </h3>
-              <p className="text-primary-foreground/70">
-                Subscribe to receive updates, access to exclusive deals, and more.
-              </p>
-            </motion.div>
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              onSubmit={handleSubmit}
-              className="flex gap-3"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 bg-primary-foreground/10 border border-primary-foreground/20 rounded-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-kilangi-gold transition-colors"
-                required
-              />
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="px-6 py-3 bg-kilangi-gold text-kilangi-charcoal font-medium rounded-sm hover:bg-kilangi-gold-light transition-colors flex items-center gap-2"
-              >
-                Subscribe
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
-            </motion.form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="section-padding py-12 lg:py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
@@ -77,6 +32,32 @@ const Footer = () => {
               contemporary design, carefully crafted for those who appreciate both 
               beauty and sustainability.
             </p>
+            
+            {/* Newsletter */}
+            <div className="mb-6">
+              <p className="text-primary-foreground/70 text-sm mb-3">
+                Subscribe for exclusive offers and updates
+              </p>
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-sm text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-kilangi-gold transition-colors"
+                  required
+                />
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="px-4 py-2 bg-kilangi-gold text-kilangi-charcoal text-sm font-medium rounded-sm hover:bg-kilangi-gold-light transition-colors"
+                >
+                  Subscribe
+                </motion.button>
+              </form>
+            </div>
+
             <div className="flex gap-3">
               {[Instagram, Facebook, Youtube].map((Icon, index) => (
                 <motion.a
@@ -95,7 +76,7 @@ const Footer = () => {
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-medium text-primary-foreground mb-4">{title}</h4>
+              <h4 className="font-medium text-primary-foreground mb-4 text-sm tracking-wide">{title}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>

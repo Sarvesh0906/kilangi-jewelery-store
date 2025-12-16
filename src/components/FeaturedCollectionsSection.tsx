@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import winterImage from "@/assets/winter-love.jpg";
-import labGrownImage from "@/assets/lab-grown.jpg";
+import winterImage from "@/assets/winter-love-new.jpg";
+import labGrownImage from "@/assets/lab-grown-new.jpg";
 
 const FeaturedCollectionsSection = () => {
   return (

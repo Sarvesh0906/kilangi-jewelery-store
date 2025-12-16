@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { Camera, Instagram, Hash, ArrowRight } from "lucide-react";
-import giftSection from "@/assets/gift-section.jpg";
-import productRing1 from "@/assets/product-ring-1.jpg";
-import winterLove from "@/assets/winter-love.jpg";
-import craftsmanship from "@/assets/craftsmanship.jpg";
+import { Instagram, ArrowRight } from "lucide-react";
+import instagram1 from "@/assets/instagram-1.jpg";
+import craftsmanship from "@/assets/craftsmanship-new.jpg";
+import winterLove from "@/assets/winter-love-new.jpg";
+import labGrown from "@/assets/lab-grown-new.jpg";
 
 const instagramPosts = [
-  { id: 1, image: giftSection },
-  { id: 2, image: productRing1 },
+  { id: 1, image: instagram1 },
+  { id: 2, image: craftsmanship },
   { id: 3, image: winterLove },
-  { id: 4, image: craftsmanship },
+  { id: 4, image: labGrown },
 ];
 
 const InstagramSection = () => {
@@ -24,10 +24,10 @@ const InstagramSection = () => {
         >
           <div className="flex items-center justify-center gap-2 mb-3">
             <Instagram className="h-5 w-5 text-kilangi-green" />
-            <span className="text-sm font-medium text-muted-foreground">@kilangi_jewellery</span>
+            <span className="text-sm font-medium text-muted-foreground">@KILANGI</span>
           </div>
           <h2 className="heading-lg text-foreground mb-3">
-            Share Your Shine! <span className="text-elegant text-kilangi-green">Shine</span> in Our Jewels?
+            Share Your <span className="text-elegant text-kilangi-green">Shine</span> in Our Jewels?
           </h2>
           <p className="text-muted-foreground">
             Tag <span className="font-medium text-foreground">#KilangiJewels</span> and you could be featured!

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import craftsmanshipImage from "@/assets/craftsmanship.jpg";
+import craftsmanshipImage from "@/assets/craftsmanship-new.jpg";
 
 const CraftsmanshipSection = () => {
   return (
@@ -17,7 +17,7 @@ const CraftsmanshipSection = () => {
             <div className="aspect-square rounded-sm overflow-hidden image-zoom">
               <img
                 src={craftsmanshipImage}
-                alt="KILANGI Craftsmanship"
+                alt="KILANGI Craftsmanship - elegant gold jewelry"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -34,7 +34,7 @@ const CraftsmanshipSection = () => {
               OUR ETHOS
             </span>
             <h2 className="heading-lg text-foreground mb-6">
-              Every <span className="text-elegant text-kilangi-green">Shape,</span><br />
+              Every <span className="text-elegant text-kilangi-green">Shape.</span><br />
               Every <span className="text-elegant text-kilangi-green">Sparkle.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">

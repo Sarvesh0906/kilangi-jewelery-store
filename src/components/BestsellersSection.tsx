@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import ProductCard from "./ProductCard";
 
-import productRing1 from "@/assets/product-ring-1.jpg";
+import productRing1 from "@/assets/product-ring-new.jpg";
 import productBracelet1 from "@/assets/product-bracelet-1.jpg";
 import productEarrings1 from "@/assets/product-earrings-1.jpg";
 import productPendant1 from "@/assets/product-pendant-1.jpg";
@@ -16,7 +16,7 @@ const products = [
   {
     id: 1,
     image: productBracelet2,
-    name: "Twisted Petal Gold Bracelet",
+    name: "TWISTED PETAL GOLD BRACELET",
     price: 1299,
     originalPrice: 1599,
     badge: "Bestseller",
@@ -24,14 +24,14 @@ const products = [
   {
     id: 2,
     image: productRing1,
-    name: "Twisted Petal Gold Bracelet",
+    name: "TWISTED PETAL GOLD BRACELET",
     price: 1799,
     originalPrice: 2199,
   },
   {
     id: 3,
     image: productEarrings1,
-    name: "Pearl Drop Elegance Earrings",
+    name: "TWISTED PETAL GOLD BRACELET",
     price: 999,
     originalPrice: 1299,
   },
